@@ -4,7 +4,7 @@ import (
 	"context"
 	"regexp"
 
-	amf_context "github.com/free5gc/amf/context"
+	amf_context "github.com/s123tg/amf/context"
 	"github.com/s123tg/amf/logger"
 	"github.com/free5gc/openapi"
 	"github.com/free5gc/openapi/Npcf_AMPolicy"
