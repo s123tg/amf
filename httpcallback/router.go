@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 
-	"github.com/free5gc/amf/logger"
+	"github.com/s123tg/amf/logger"
 	"github.com/free5gc/logger_util"
 )
 
