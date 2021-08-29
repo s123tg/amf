@@ -6,8 +6,8 @@ import (
 
 	"github.com/antihax/optional"
 
-	amf_context "github.com/free5gc/amf/context"
-	"github.com/free5gc/amf/logger"
+	amf_context "github.com/s123tg/amf/context"
+	"github.com/s123tg/amf/logger"
 	"github.com/free5gc/openapi"
 	"github.com/free5gc/openapi/Nnssf_NSSelection"
 	"github.com/free5gc/openapi/models"
