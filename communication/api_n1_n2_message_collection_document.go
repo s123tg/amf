@@ -16,8 +16,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/free5gc/amf/logger"
-	"github.com/free5gc/amf/producer"
+	"github.com/s123tg/amf/logger"
+	"github.com/s123tg/amf/producer"
 	"github.com/free5gc/http_wrapper"
 	"github.com/free5gc/openapi"
 	"github.com/free5gc/openapi/models"
