@@ -9,9 +9,9 @@ import (
 
 	"github.com/antihax/optional"
 
-	amf_context "github.com/free5gc/amf/context"
+	amf_context "github.com/s123tg/amf/context"
 	ausf_context "github.com/free5gc/ausf/context"
-	"github.com/free5gc/amf/logger"
+	"github.com/s123tg/amf/logger"
 	"github.com/free5gc/ausf/producer"
 	"github.com/free5gc/nas/nasType"
 	"github.com/free5gc/openapi"
