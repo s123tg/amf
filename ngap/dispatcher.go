@@ -5,8 +5,8 @@ import (
 
 	"git.cs.nctu.edu.tw/calee/sctp"
 
-	"github.com/free5gc/amf/context"
-	"github.com/free5gc/amf/logger"
+	"github.com/s123tg/amf/context"
+	"github.com/s123tg/amf/logger"
 	"github.com/free5gc/ngap"
 	"github.com/free5gc/ngap/ngapType"
 )
