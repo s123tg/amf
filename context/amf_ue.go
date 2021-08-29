@@ -13,7 +13,7 @@ import (
 	"github.com/sirupsen/logrus"
 
 	"github.com/free5gc/UeauCommon"
-	"github.com/free5gc/amf/logger"
+	"github.com/s123tg/amf/logger"
 	"github.com/free5gc/fsm"
 	"github.com/free5gc/idgenerator"
 	"github.com/free5gc/nas/nasMessage"
