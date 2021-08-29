@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/free5gc/amf/context"
+	"github.com/s123tg/amf/context"
 	"github.com/free5gc/nas"
 	"github.com/free5gc/nas/security"
 	"github.com/free5gc/openapi/models"
