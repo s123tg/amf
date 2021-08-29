@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"reflect"
 
-	"github.com/free5gc/amf/context"
-	"github.com/free5gc/amf/logger"
+	"github.com/s123tg/amf/context"
+	"github.com/s123tg/amf/logger"
 	"github.com/free5gc/http_wrapper"
 	"github.com/free5gc/openapi/models"
 )
