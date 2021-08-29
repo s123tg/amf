@@ -15,7 +15,7 @@ import (
 	"github.com/mitchellh/mapstructure"
 	"github.com/mohae/deepcopy"
 
-	"github.com/free5gc/amf/consumer"
+	"github.com/s123tg/amf/consumer"
 	"github.com/free5gc/amf/context"
 	gmm_message "github.com/free5gc/amf/gmm/message"
 	ngap_message "github.com/free5gc/amf/ngap/message"
