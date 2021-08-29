@@ -5,9 +5,9 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/free5gc/amf/context"
-	"github.com/free5gc/amf/factory"
-	"github.com/free5gc/amf/logger"
+	"github.com/s123tg/amf/context"
+	"github.com/s123tg/amf/factory"
+	"github.com/s123tg/amf/logger"
 	"github.com/free5gc/nas/security"
 	"github.com/free5gc/openapi/models"
 )
