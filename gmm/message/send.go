@@ -1,11 +1,11 @@
 package message
 
 import (
-	"github.com/free5gc/amf/context"
-	gmm_common "github.com/free5gc/amf/gmm/common"
-	"github.com/free5gc/amf/logger"
-	ngap_message "github.com/free5gc/amf/ngap/message"
-	"github.com/free5gc/amf/producer/callback"
+	"github.com/s123tg/amf/context"
+	gmm_common "github.com/s123tg/amf/gmm/common"
+	"github.com/s123tg/amf/logger"
+	ngap_message "github.com/s123tg/amf/ngap/message"
+	"github.com/s123tg/amf/producer/callback"
 	"github.com/free5gc/nas/nasMessage"
 	"github.com/free5gc/nas/nasType"
 	"github.com/free5gc/ngap/ngapType"
