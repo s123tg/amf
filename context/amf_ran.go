@@ -6,7 +6,7 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/free5gc/amf/logger"
+	"github.com/s123tg/amf/logger"
 	"github.com/free5gc/ngap/ngapConvert"
 	"github.com/free5gc/ngap/ngapType"
 	"github.com/free5gc/openapi/models"
