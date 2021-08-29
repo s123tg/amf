@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	amf_context "github.com/free5gc/amf/context"
+	amf_context "github.com/s123tg/amf/context"
 	"github.com/s123tg/amf/logger"
 	"github.com/s123tg/amf/util"
 	"github.com/free5gc/openapi"
