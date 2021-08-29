@@ -1,9 +1,9 @@
 package message
 
 import (
-	"github.com/free5gc/amf/context"
-	"github.com/free5gc/amf/logger"
-	"github.com/free5gc/amf/producer/callback"
+	"github.com/s123tg/amf/context"
+	"github.com/s123tg/amf/logger"
+	"github.com/s123tg/amf/producer/callback"
 	"github.com/free5gc/aper"
 	"github.com/free5gc/ngap/ngapType"
 	"github.com/free5gc/openapi/models"
