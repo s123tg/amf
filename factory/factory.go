@@ -10,7 +10,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/free5gc/amf/logger"
+	"github.com/s123tg/amf/logger"
 )
 
 var AmfConfig Config
