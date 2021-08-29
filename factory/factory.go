@@ -32,6 +32,7 @@ func InitConfigFactory(f string) error {
 
 func CheckConfigVersion() error {
 	currentVersion := AmfConfig.GetVersion()
+	fmt.println(currentVersion)
 
 	if currentVersion != AMF_EXPECTED_CONFIG_VERSION {
 		return fmt.Errorf("config version is [%s], but expected is [%s].",
