@@ -8,8 +8,8 @@ import (
 	"time"
 
 	amf_context "github.com/free5gc/amf/context"
-	"github.com/free5gc/amf/logger"
-	"github.com/free5gc/amf/util"
+	"github.com/s123tg/amf/logger"
+	"github.com/s123tg/amf/util"
 	"github.com/free5gc/openapi"
 	"github.com/free5gc/openapi/Nnrf_NFManagement"
 	"github.com/free5gc/openapi/models"
