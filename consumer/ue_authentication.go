@@ -9,10 +9,8 @@ import (
 
 	"github.com/antihax/optional"
 
-	amf_context "github.com/s123tg/amf/context"
-	ausf_context "github.com/free5gc/ausf/context"
-	"github.com/s123tg/amf/logger"
-	"github.com/free5gc/ausf/producer"
+	amf_context "github.com/free5gc/amf/context"
+	"github.com/free5gc/amf/logger"
 	"github.com/free5gc/nas/nasType"
 	"github.com/free5gc/openapi"
 	"github.com/free5gc/openapi/Nausf_UEAuthentication"
@@ -39,56 +37,7 @@ func SendUEAuthenticationAuthenticateRequest(ue *amf_context.AmfUe,
 	if resynchronizationInfo != nil {
 		authInfo.ResynchronizationInfo = resynchronizationInfo
 	}
-	var responseBody models.UeAuthenticationCtx
-	var authInfoReq models.AuthenticationInfoRequest
-	
-	//change
-	supiOrSuci := ue.Suci
 
-	//snName := updateAuthenticationInfo.ServingNetworkName
-	/*servingNetworkAuthorized := ausf_context.IsServingNetworkAuthorized(snName)
-	if !servingNetworkAuthorized {
-		var problemDetails models.ProblemDetails
-		problemDetails.Cause = "SERVING_NETWORK_NOT_AUTHORIZED"
-		problemDetails.Status = http.StatusForbidden
-		logger.UeAuthPostLog.Infoln("403 forbidden: serving network NOT AUTHORIZED")
-		return nil, "", &problemDetails
-	}
-	logger.UeAuthPostLog.Infoln("Serving network authorized")*/
-
-	//responseBody.ServingNetworkName = snName
-	//authInfoReq.ServingNetworkName = snName
-	self := ausf_context.GetSelf()
-	authInfoReq.AusfInstanceId = self.GetSelfID()
-
-	/*if updateAuthenticationInfo.ResynchronizationInfo != nil {
-		logger.UeAuthPostLog.Warningln("Auts: ", updateAuthenticationInfo.ResynchronizationInfo.Auts)
-		ausfCurrentSupi := ausf_context.GetSupiFromSuciSupiMap(supiOrSuci)
-		logger.UeAuthPostLog.Warningln(ausfCurrentSupi)
-		ausfCurrentContext := ausf_context.GetAusfUeContext(ausfCurrentSupi)
-		logger.UeAuthPostLog.Warningln(ausfCurrentContext.Rand)
-		if updateAuthenticationInfo.ResynchronizationInfo.Rand == "" {
-			updateAuthenticationInfo.ResynchronizationInfo.Rand = ausfCurrentContext.Rand
-		}
-		logger.UeAuthPostLog.Warningln("Rand: ", updateAuthenticationInfo.ResynchronizationInfo.Rand)
-		authInfoReq.ResynchronizationInfo = updateAuthenticationInfo.ResynchronizationInfo
-	}*/
-
-	udmUrl := getUdmUrl(self.NrfUri)
-	client := createClientToUdmUeau(udmUrl)
-	authInfoResult, rsp, err := client.GenerateAuthDataApi.GenerateAuthData(context.Background(), supiOrSuci, authInfoReq)
-	if err != nil {
-		logger.UeAuthPostLog.Infoln(err.Error())
-		var problemDetails models.ProblemDetails
-		if authInfoResult.AuthenticationVector == nil {
-			problemDetails.Cause = "AV_GENERATION_PROBLEM"
-		} else {
-			problemDetails.Cause = "UPSTREAM_SERVER_ERROR"
-		}
-		problemDetails.Status = http.StatusInternalServerError
-		return nil, "", &problemDetails
-	}
-	//change end
 	ueAuthenticationCtx, httpResponse, err := client.DefaultApi.UeAuthenticationsPost(context.Background(), authInfo)
 	if err == nil {
 		return &ueAuthenticationCtx, nil, nil
@@ -106,7 +55,7 @@ func SendUEAuthenticationAuthenticateRequest(ue *amf_context.AmfUe,
 func SendAuth5gAkaConfirmRequest(ue *amf_context.AmfUe, resStar string) (
 	*models.ConfirmationDataResponse, *models.ProblemDetails, error) {
 	var ausfUri string
-	if confirmUri, err := url.Parse(ue.AuthenticationCtx.Links["link"].Href); err != nil {
+	if confirmUri, err := url.Parse(ue.AuthenticationCtx.Links["5g-aka"].Href); err != nil {
 		return nil, nil, err
 	} else {
 		ausfUri = fmt.Sprintf("%s://%s", confirmUri.Scheme, confirmUri.Host)
@@ -143,7 +92,7 @@ func SendAuth5gAkaConfirmRequest(ue *amf_context.AmfUe, resStar string) (
 
 func SendEapAuthConfirmRequest(ue *amf_context.AmfUe, eapMsg nasType.EAPMessage) (
 	response *models.EapSession, problemDetails *models.ProblemDetails, err1 error) {
-	confirmUri, err := url.Parse(ue.AuthenticationCtx.Links["link"].Href)
+	confirmUri, err := url.Parse(ue.AuthenticationCtx.Links["eap-session"].Href)
 	if err != nil {
 		logger.ConsumerLog.Errorf("url Parse failed: %+v", err)
 	}
