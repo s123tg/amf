@@ -67,6 +67,7 @@ func SendNotification(ue *context.RanUe, nasMsg []byte) {
 }
 
 func SendIdentityRequest(ue *context.RanUe, typeOfIdentity uint8) {
+	logger.GmmLog.Error("SendIdentityRequest............")
 	if ue == nil {
 		logger.GmmLog.Error("SendIdentityRequest: RanUe is nil")
 		return
